@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+</div>
+<br><strong>App User</strong>
+<hr>
+<app-user [name]="rootName" (nameChanged)="onNameChanged($event)"></app-user>
+<!-- <app-user [name]="rootName"></app-user> -->
+<!------------------------------------------------------------------>
+<div><br><strong>Dashboard</strong></div>
+<hr>
+<app-dashboard></app-dashboard>
+<!------------------------------------------------------------------>
+<div><br><strong>CartComponent</strong></div>
+<hr>
+<app-cart [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></app-cart>
+<!------------------------------------------------------------------>
+<div><br><strong>Debugging</strong></div>
+<hr>
+<p>{{number}}</p>
+<button (click)="onIncrease()" class="btn btn-primary">Increase Number</button>
