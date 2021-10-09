@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
   characters = [
-    { name: "Luke Skywalker", side: ''},
+    { name: "Luke Skywalker", side: '' },
     { name: "Dark Vader", side: '' }
   ];
 
@@ -18,19 +18,25 @@ export class TabsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChoose(side){
+  onChoose(side) {
     this.chosenList = side;
   }
 
-  getCharacters()
-  {
-    
+  getCharacters() {
+
     if (this.chosenList === "all") {
       return this.characters.slice();
     }
-    return this.characters.filter((char => {
-      char.side === this.chosenList;
-    }))
+    return this.characters.filter((char) => {
+      return char.side === this.chosenList
+    });
+  }
+
+  onSideChosen(charInfo) {
+    const pos = this.characters.findIndex((char) => {
+      return char.name == charInfo.name;
+    })
+    this.characters[pos].side = charInfo.side;
   }
 
 }
