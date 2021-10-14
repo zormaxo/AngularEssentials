@@ -23,3 +23,4 @@ npm cache clean --force
 npm install -g npm@latest
 
 npm install --save @types/lodash
+ng g c create-character --skip-tests
