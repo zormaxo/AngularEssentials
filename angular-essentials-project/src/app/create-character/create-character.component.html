@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <div class="mb-3">
     <label for="name">Character Name</label>
-    <input type="text" id="name" name="name" class="form-control" ngModel required #nameCtrl="ngModel" />
+    <input type="text" id="name" name="name" class="form-control" [ngModel]="def" required #nameCtrl="ngModel" />
     <span class="form-text" *ngIf="nameCtrl.invalid && nameCtrl.touched">
       Please enter a name</span>
   </div>
