@@ -17,7 +17,8 @@ const routes = [
   {
     path: 'characters', component: TabsComponent, children: [
       { path: '', redirectTo: "all", pathMatch:"full" },
-      { path: ':side', component: ListComponent }
+      { path: ':side', component: ListComponent },
+      { path: '**', redirectTo: "asd" }
     ]
   },
   { path: 'new-character', component: CreateCharacterComponent },
