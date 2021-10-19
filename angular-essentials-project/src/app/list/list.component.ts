@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StarWarsService } from '../star-wars.service';
 
 @Component({
   selector: 'app-list',
@@ -6,12 +8,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  @Input() characters;
+  characters = [];
+
+  // @Input() characters;
   // @Output() sideAssigned = new EventEmitter<{ name: string, side: string }>();
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private swService: StarWarsService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      params => {
+        this.characters = this.swService.getCharacters(params.side)
+      }
+    );
   }
 
   // onSideAssigned(charInfo) {
