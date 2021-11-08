@@ -12,28 +12,21 @@ export class ListComponent implements OnInit, OnDestroy {
   loadedSide = "all";
   subscription;
 
-  // @Input() characters;
-  // @Output() sideAssigned = new EventEmitter<{ name: string, side: string }>();
-
   constructor(private activatedRoute: ActivatedRoute, private swService: StarWarsService) { }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe;
-  }
-
+  
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       params => {
         this.characters = this.swService.getCharacters(params.side);
         this.loadedSide = params.side;
-      }
-    );
+      });
+
     this.subscription = this.swService.charactersChanged.subscribe(
       () => this.characters = this.swService.getCharacters(this.loadedSide)
     )
   }
 
-  // onSideAssigned(charInfo) {
-  //   this.sideAssigned.emit(charInfo);
-  // }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe;
+  }
 }
