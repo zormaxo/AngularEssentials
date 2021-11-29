@@ -68,7 +68,8 @@
               "browserTarget": "angular-essentials-project:build:production"
             },
             "development": {
-              "browserTarget": "angular-essentials-project:build:development"
+              "browserTarget": "angular-essentials-project:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

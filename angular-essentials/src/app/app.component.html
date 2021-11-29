@@ -4,19 +4,22 @@
     Welcome to {{title}}!!
   </h1>
 </div>
-<br><strong>App User</strong>
-<hr>
+<hr><h6>App User (user.component.ts)</h6><br><br>
+
 <app-user [name]="rootName" (nameChanged)="onNameChanged($event)"></app-user>
-<!-- <app-user [name]="rootName"></app-user> -->
+
 <!------------------------------------------------------------------>
-<div><br><strong>Dashboard</strong></div>
-<hr>
+
+<hr><h6>Dashboard</h6><br><br>
 <app-dashboard></app-dashboard>
+
 <!------------------------------------------------------------------>
-<div><br><strong>CartComponent</strong></div>
-<hr>
+
+<hr><h6>CartComponent</h6><br><br>
 <app-cart [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></app-cart>
+
 <!------------------------------------------------------------------>
+
 <div><br><strong>Debugging</strong></div>
 <hr>
 <p>{{number}}</p>
