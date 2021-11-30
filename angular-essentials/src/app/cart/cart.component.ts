@@ -15,6 +15,10 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
+  omer() {
+    return false;
+  }
+
   onAddItem() {
     this.itemAdded.emit(this.newItem);
   }
