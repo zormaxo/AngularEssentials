@@ -15,7 +15,7 @@ const routes = [
     path: 'new-character', loadChildren: () => import('./create-character/create-character.module')
       .then(m => m.CreateCharacterModule)
   },
-  { path: '**', redirectTo: '/characters' }
+  { path: '**', redirectTo: 'characters' }
 ];
 
 @NgModule({
